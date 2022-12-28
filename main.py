@@ -1,5 +1,5 @@
 import streamlit as st
-
+import pandas as pd
 st.set_page_config(layout="wide")
 
 col1, col2 = st.columns(2)
@@ -10,9 +10,27 @@ with col1:
 with col2:
     st.title("Jeet Desai")
     content = """
-
     Hi, I'm Jeet. I am pursuing MS CS from Loyola Marymount University. I'm currently working as Graduate assitant at LMU.
-    I have worked as a software engineer before satrting my masters.
-    
+    I have worked as a software engineer before satrting my masters. 
     """
     st.info(content)
+
+content2 = """
+
+Below you can find  some of the apps I have built. Feel free to contact me!
+
+"""
+st.write(content2)
+
+
+col3, col4 = st.columns(2)
+
+df = pd.read_csv("data.csv", sep=";")
+with col3:
+    for index, row in df[:10].iterrows():
+        st.header(row["title"])
+
+
+with col4:
+    for index, row in df[10:].iterrows():
+        st.header(row["title"])
