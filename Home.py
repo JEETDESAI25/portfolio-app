@@ -14,6 +14,7 @@ with col2:
     Hi, I'm Jeet. I am pursuing MS CS from Loyola Marymount University. I'm currently working as Graduate assitant at LMU.
     I have worked as a software engineer before satrting my masters. 
     """
+
     st.info(content)
 
 content2 = """
@@ -22,7 +23,6 @@ Below you can find  some of the apps I have built. Feel free to contact me!
 
 """
 st.write(content2)
-
 
 col3, col4 = st.columns(2)
 
